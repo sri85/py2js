@@ -31,10 +31,12 @@ var i,c =0;
             c++;
             i = this.indexOf(ch,++i)
         }
+        return c;
     }
     else {
-        throws "Type Error"
+        throw ("Type Error");
     
     }
+    return c;
 
 }
