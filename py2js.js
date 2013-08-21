@@ -24,7 +24,7 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 String.prototype.count = function(ch){
-var i,c =0;
+    var i,c =0;
     if(typeof ch ==='string'){
         i = this.indexOf(ch);
         while(i != -1){
@@ -40,3 +40,65 @@ var i,c =0;
     return c;
 
 }
+
+String.prototype.reverse = function() {
+    return this.split('').reverse().join('');
+
+}
+
+String.prototype.title = function() {
+    var a,i,l,s=[];
+    a = this.trim().split(" ");
+    l = a.length;
+    for(i=0;i<l;i++){
+        s.push(a[i].toString().replace(a[i][0],a[][].toUpperCase()));
+    
+    }
+    
+    return s.join(" ");
+
+}
+
+String.prototype.capitalize = function() {
+    return this.toLowerCase().replace(this[0].toLowerCase(),this[0].toUpperCase());
+
+}
+
+String.prototype.isLower = function() {
+    var i,l,c='';
+    l = this.length;
+    if(!NaN(c*1)){
+        return false;
+    
+    }
+    else {
+        while(i<l){
+            c = this.charAt(i);
+            return (c===c.toUpperCase());
+            i++;
+        
+        }
+    
+    }
+
+}
+
+String.prototype.isUpper = function() {
+    var i,l,c='';
+    l = this.length;
+    if(!NaN(c*1)){
+        return false;
+    
+    }
+    else {
+        while(i<l){
+            c = this.charAt(i);
+            return (c===c.toLowerCase());
+            i++;
+        
+        }
+    
+    }
+
+}
+
