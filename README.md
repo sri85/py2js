@@ -1,7 +1,9 @@
 py2js
 =====
 
-This is a library which shall provide python like methods in javascript
+py2js is stringutil library for javascript.
 
-Py2Js is a library which aims to provide some useful methods found in python to javascript. All you have to do is include 
-py2js.js in the <script> tags to be able to use it. 
+Javascript is a wonderful language , but unlike other scripting languages like python which have many useful string manipulation
+methods. 
+py2js shall provide pythin like string util methods which can be easily used with javascript.
+
