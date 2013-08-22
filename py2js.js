@@ -145,6 +145,11 @@ String.prototype.equals = function(s){
     var i=0,a,l;
     a = s.split('');
     l = s.length;
+    if(l != this.length){
+        return false;
+    
+    }
+    else {
     while(i<l){
         if(this[i] != s[i]) {
             return false;
@@ -152,7 +157,17 @@ String.prototype.equals = function(s){
         }
         i++
     }
-    return true;
+        return true;
+    }
 
 }
+
+String.prototype.isEmpty = function() {
+
+    if(/[\s\t\n]/g).test(this) || this.length ==0) {
+        return true;
+
+    }
+  return false;
+    }
 
