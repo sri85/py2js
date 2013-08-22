@@ -66,29 +66,22 @@ String.prototype.capitalize = function() {
 }
 
 String.prototype.isUpper = function() {
-    
-    if((/(?=.*[A-Z])/g ).test(this)) {
-        return true;
-    
-    }
-    else {
-        return false.
-    
-    }
-
+    var i=0;
+     if(/(?=.*[a-z])/g.test(this)){
+        return false;
+     }
+     return true;
 }
-
 String.prototype.isLower = function() {
     
-    if((/(?=.*[a-z])/g).test(this)) {
-        return true;
-    
-    }
-    else {
+    if((/(?=.*[A-Z])/g).test(this)) {
         return false;
     
     }
-
+    
+        return true;
+    
+    
 }
 
 String.prototype.swapCase = function() {
