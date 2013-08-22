@@ -90,3 +90,68 @@ String.prototype.isLower = function() {
 
 }
 
+String.prototype.swapCase = function() {
+    var i,a=[],c='',l;
+    a = this.split('');
+    l = this.length;
+    for(i=0;i<l;i++){
+        if(a[i].isUpper()) {
+            c = c+a[i].toUpperCase();
+        
+        }
+        else {
+            c = c+a[i].toLowerCase();
+        }
+    
+    }
+    return c;
+
+}
+
+String.prototype.isAlphaNum = function() {
+    
+    if((/\s/g).test(this)|| (/[^a-zA-Zs0-9]/g).test(this)){
+        return false;
+    
+    }
+    else {
+        if((/\w\d/g).test(this)){
+            return true;
+        }
+        
+        else {
+            return false;
+        }
+    
+    }
+
+}
+
+String.prototype.contains = function(c)  {
+    var re;
+    re = new Regex(c,g);
+    if(re.test(this)){
+        return true;
+    }
+    else {
+        return false;
+    
+    }
+
+}
+
+String.prototype.equals = function(s){
+    var i=0,a,l;
+    a = s.split('');
+    l = s.length;
+    while(i<l){
+        if(this[i] != s[i]) {
+            return false;
+        
+        }
+        i++
+    }
+    return true;
+
+}
+
