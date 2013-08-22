@@ -65,8 +65,8 @@ String.prototype.capitalize = function() {
 }
 
 String.prototype.isUpper = function() {
-    var patt = /(?=.*[A-Z])/g ;
-    if(patt.test(this)) {
+    
+    if((/(?=.*[A-Z])/g ).test(this)) {
         return true;
     
     }
@@ -78,13 +78,13 @@ String.prototype.isUpper = function() {
 }
 
 String.prototype.isLower = function() {
-    var patt = /(?=.*[a-z])/g ;
-    if(patt.test(this)) {
+    
+    if((/(?=.*[a-z])/g).test(this)) {
         return true;
     
     }
     else {
-        return false.
+        return false;
     
     }
 
