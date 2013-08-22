@@ -64,39 +64,27 @@ String.prototype.capitalize = function() {
 
 }
 
-String.prototype.isLower = function() {
-    var i,l,c='';
-    l = this.length;
-    if(!NaN(c*1)){
-        return false;
+String.prototype.isUpper = function() {
+    var patt = /(?=.*[A-Z])/g ;
+    if(patt.test(this)) {
+        return true;
     
     }
     else {
-        while(i<l){
-            c = this.charAt(i);
-            return (c===c.toUpperCase());
-            i++;
-        
-        }
+        return false.
     
     }
 
 }
 
-String.prototype.isUpper = function() {
-    var i,l,c='';
-    l = this.length;
-    if(!NaN(c*1)){
-        return false;
+String.prototype.isLower = function() {
+    var patt = /(?=.*[a-z])/g ;
+    if(patt.test(this)) {
+        return true;
     
     }
     else {
-        while(i<l){
-            c = this.charAt(i);
-            return (c===c.toLowerCase());
-            i++;
-        
-        }
+        return false.
     
     }
 
