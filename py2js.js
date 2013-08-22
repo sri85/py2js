@@ -1,5 +1,6 @@
 /*Copyright (c) 2013 Sripathi Pai
 All rights reserved.
+paisripathi at gmail dot com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
