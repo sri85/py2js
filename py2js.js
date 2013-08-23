@@ -174,3 +174,18 @@ String.prototype.isDigit = function() {
     return !(/[^0-9]/g.test(this));
 }
 
+String.prototype.isTitle = function() {
+    var i,l,s;
+    a = this.split(" ");
+    l = a.length;
+    for (i=0;i<l;i++){
+        if(!a[i][0].isUpper()){
+            return false
+        
+        }
+    
+    }
+    return true
+
+}
+
