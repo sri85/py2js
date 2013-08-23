@@ -52,7 +52,7 @@ String.prototype.title = function() {
     a = this.trim().split(" ");
     l = a.length;
     for(i=0;i<l;i++){
-        s.push(a[i].toString().replace(a[i][0],a[][].toUpperCase()));
+        s.push(a[i].toString().replace(a[i][0],a[i][0].toUpperCase()));
     
     }
     
@@ -157,7 +157,7 @@ String.prototype.equals = function(s){
 
 String.prototype.isEmpty = function() {
 
-    if(/[\s\t\n]/g).test(this) || this.length ==0) {
+    if((/[\s\t\n]/g).test(this) || (this.length) ==0) {
         return true;
 
     }
