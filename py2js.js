@@ -161,6 +161,16 @@ String.prototype.isEmpty = function() {
         return true;
 
     }
-  return false;
-    }
+    return false;
+ }
+
+String.prototype.isAlpha = function() {
+    return !(/[^a-zA-Z]/g.test(this));
+
+}
+
+String.prototype.isDigit = function() {
+
+    return !(/[^0-9]/g.test(this));
+}
 
