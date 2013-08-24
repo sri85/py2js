@@ -205,3 +205,12 @@ String.prototype.stripc = function()  {
 
 }
 
+String.prototype.multiply = function(n){
+    var i,s='',a=[];
+    for(i=0;i<n;i++){
+        s = s+this
+    
+    }
+    return s;
+
+}
