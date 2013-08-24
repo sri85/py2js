@@ -216,13 +216,15 @@ String.prototype.multiply = function(n){
 }
 
 String.prototype.prefix = function(s) {
-    return (this+s)
+    return (s+this)
+    
+    
     
     
 
 }
 
 String.prototype.suffix = function(s) {
-    return (s+this)
+    return (this+s)
 
 }
