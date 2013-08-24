@@ -216,7 +216,7 @@ String.prototype.multiply = function(n){
 }
 
 String.prototype.prefix = function(s) {
-    return (s+this)
+    return (s+this);
     
     
     
@@ -225,6 +225,6 @@ String.prototype.prefix = function(s) {
 }
 
 String.prototype.suffix = function(s) {
-    return (this+s)
+    return (this+s);
 
 }
