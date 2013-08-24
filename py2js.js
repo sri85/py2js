@@ -189,3 +189,19 @@ String.prototype.isTitle = function() {
 
 }
 
+String.prototype.stripc = function()  {
+    var s=[],a='',l,i;
+    s = this.split('');
+    l = s.length;
+    for(i=0;i<l;i++){
+        if(/[a-zA-Z0-9]/g.test(s[i])){
+            a = a+s[i];
+    
+        }
+    
+    }
+    
+    return a;
+
+}
+
