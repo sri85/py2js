@@ -217,14 +217,18 @@ String.prototype.multiply = function(n){
 
 String.prototype.prefix = function(s) {
     return (s+this);
-    
-    
-    
-    
-
 }
 
 String.prototype.suffix = function(s) {
     return (this+s);
+
+}
+
+String.prototype.lTrim = function() {
+    return this.replace(/^\s+/,"");
+}
+
+String.prototype.rTrim = function() {
+    return this.replace(/\s+$/,"");
 
 }
