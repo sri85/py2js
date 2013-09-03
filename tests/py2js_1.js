@@ -78,6 +78,10 @@ var p = {
 	},
 
 	isUpper : function (s) {
+		if (s === '' || s === null || s === undefined) {
+			return false;
+
+		}
 
 		if (/(?=.*[a-z])/g.test(s)) {
 			return false;
