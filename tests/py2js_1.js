@@ -49,6 +49,10 @@ var p = {
 	},
 
 	reverse : function (s) {
+        if(s===null || s===undefined){
+            return '';
+        
+        }
 
 		return s.split('').reverse().join('');
 

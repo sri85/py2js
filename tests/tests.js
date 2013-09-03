@@ -38,6 +38,9 @@ test("Check the typeof return value, it must return boolean ", function () {
 test("Check whether p has method isUpper ", function () {
 	equal(p.hasOwnProperty('isUpper'), true, "Passed!");
 });
+test("Check whether p has method isUpper ", function () {
+	equal(p.isUpper('ABCD.'), false, "Passed!");
+});
 
 module("isLower tests")
 
@@ -60,7 +63,7 @@ test("Passing an empty space  must return false", function () {
 	equal(p.isLower(" "), false, "Passed!");
 });
 test("Passing a string with atleast one upperCase charecter must return false", function () {
-	equal(p.isLower("i am a Test"), false, "Passed!");
+	equal(p.isLower("I AM A tEST"), false, "Passed!");
 });
 test("Passing a boolean value with  must return false", function () {
 	equal(p.isLower(true), false, "Passed!");
@@ -80,4 +83,35 @@ test("Check the typeof return value, it must return boolean ", function () {
 });
 test("Check whether p has method isLower ", function () {
 	equal(p.hasOwnProperty('isLower'), true, "Passed!");
+});
+
+test("Check whether p has method isUpper ", function () {
+	equal(p.isLower('abcd! '), false, "Passed!");
+});
+
+module("reverse tests")
+
+test("Basic reverse functionality ", function () {
+	equal(p.reverse('foo'), 'oof', "Passed!");
+});
+
+test("Basic reverse functionality ", function () {
+	equal(p.reverse('foobar'), 'raboof', "Passed!");
+});
+
+test("Basic reverse functionality ", function () {
+	equal(p.reverse('foo bar'), 'rab oof', "Passed!");
+});
+
+test("Passing an empty string must return the empty string ", function () {
+	equal(p.reverse(''), '', "Passed!");
+});
+test("Passing an empty space must return the empty string ", function () {
+	equal(p.reverse(' '), ' ', "Passed!");
+});
+test("Passing null must return the empty string ", function () {
+	equal(p.reverse(null), '', "Passed!");
+});
+test("Passing undefined must return the empty string ", function () {
+	equal(p.reverse(undefined), '', "Passed!");
 });
