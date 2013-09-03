@@ -78,12 +78,12 @@ var p = {
 	},
 
 	isUpper : function (s) {
-		if (s === '' || s === null || s === undefined) {
+		if (s === '' || s === null || s === undefined || s === ' ' || s === true || s === false) {
 			return false;
 
 		}
 
-		if (/(?=.*[a-z])/g.test(s)) {
+		if (/(?=.*[a-z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]])/g.test(s)) {
 			return false;
 
 		}
@@ -92,8 +92,12 @@ var p = {
 	},
 
 	isLower : function (s) {
+		if (s === '' || s === null || s === undefined || s === ' ' || s === true || s === false) {
+			return false;
 
-		if ((/(?=.*[A-Z])/g).test(s)) {
+		}
+
+		if ((/(?=.*[A-Z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]])/g).test(s)) {
 			return false;
 
 		}
