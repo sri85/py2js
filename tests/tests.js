@@ -32,6 +32,9 @@ test("Passing special charecter  must return false", function () {
 test("Passing the return value of the toUpperCase() must return true ", function () {
 	equal(p.isUpper('a'.toUpperCase()), true, "Passed!");
 });
+test("Check the typeof return value, it must return boolean ", function () {
+	equal(typeof p.isUpper('A'), 'boolean', "Passed!");
+});
 
 module("isLower tests")
 
@@ -68,4 +71,7 @@ test("Passing special charecter  must return false", function () {
 });
 test("Passing the return value of the toLowerCase() must return true ", function () {
 	equal(p.isLower('a'.toLowerCase()), true, "Passed!");
+});
+test("Check the typeof return value, it must return boolean ", function () {
+	equal(typeof p.isLower('a'), 'boolean', "Passed!");
 });
