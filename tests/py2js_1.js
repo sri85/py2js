@@ -49,12 +49,18 @@ var p = {
 	},
 
 	reverse : function (s) {
-		if (s === null || s === undefined) {
-			return '';
+		if (typeof(s)==="string") {
+			return s.split('').reverse().join('');
 
 		}
+        
+        else {
+        
+            return '';
+        
+        }
 
-		return s.split('').reverse().join('');
+		
 
 	},
 

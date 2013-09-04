@@ -134,3 +134,50 @@ test("Passing null must return the empty string ", function () {
 test("Passing undefined must return the empty string ", function () {
 	equal(p.reverse(undefined), '', "Passed!");
 });
+
+test("Passing NaN must return the empty string ", function () {
+	equal(p.reverse(NaN), '', "Passed!");
+});
+test("Passing Infinity must return the empty string ", function () {
+	equal(p.reverse(Infinity), '', "Passed!");
+});
+test("Passing Infinity must return the empty string ", function () {
+	equal(p.reverse("a"), 'a', "Passed!");
+});
+
+module('isString tests')
+
+test("Passing a string must return true", function () {
+	equal(p.isString('a'), true, "Passed!");
+});
+
+test("Passing an  empty string must return true", function () {
+	equal(p.isString(''), true, "Passed!");
+});
+
+
+test("Passing null must return false", function () {
+	equal(p.isString(' '), true, "Passed!");
+});
+test("Passing null must return false", function () {
+	equal(p.isString(null), false, "Passed!");
+});
+test("Passing undefined must return false", function () {
+	equal(p.isString(undefined), false, "Passed!");
+});
+test("Passing NaN must return false", function () {
+	equal(p.isString(NaN), false, "Passed!");
+});
+test("Passing NaN must return false", function () {
+	equal(p.isString(Infinity), false, "Passed!");
+});
+test("Passing NaN must return false", function () {
+	equal(p.isString(123), false, "Passed!");
+});
+
+test("Passing NaN must return false", function () {
+	equal(p.isString(false), false, "Passed!");
+});
+test("Passing NaN must return false", function () {
+	equal(p.isString(true), false, "Passed!");
+});
