@@ -49,10 +49,10 @@ var p = {
 	},
 
 	reverse : function (s) {
-        if(s===null || s===undefined){
-            return '';
-        
-        }
+		if (s === null || s === undefined) {
+			return '';
+
+		}
 
 		return s.split('').reverse().join('');
 
@@ -82,31 +82,37 @@ var p = {
 	},
 
 	isUpper : function (s) {
-		if (s === '' || s === null || s === undefined || s === ' ' || s === true || s === false) {
+		if (typeof(s) === "string") {
+			if (/(?=.*[a-z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]\s])/g.test(s) || s == '') {
+				return false;
+
+			} else {
+				return true;
+			}
+
+		} else {
 			return false;
 
 		}
-
-		if (/(?=.*[a-z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]])/g.test(s)) {
-			return false;
-
-		}
-		return true;
 
 	},
 
 	isLower : function (s) {
-		if (s === '' || s === null || s === undefined || s === ' ' || s === true || s === false) {
-			return false;
+		if (typeof(s) === "string") {
+			if ((/(?=.*[A-Z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]\s])/g).test(s) ||s=='') {
+				return false;
+
+			} else {
+
+				return true;
+			}
 
 		}
-
-		if ((/(?=.*[A-Z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]])/g).test(s)) {
-			return false;
-
-		}
-
-		return true;
+        
+        else {
+        
+            return false;
+        }
 
 	},
 

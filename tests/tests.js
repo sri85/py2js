@@ -1,3 +1,9 @@
+/*
+This file has the set of unit tests for the py2js library.
+
+
+*/
+
 module("isUpper tests")
 test("Passing an alphabet in lower case must return false", function () {
 	equal(p.isUpper('a'), false, "Passed!");
@@ -40,6 +46,12 @@ test("Check whether p has method isUpper ", function () {
 });
 test("Check whether p has method isUpper ", function () {
 	equal(p.isUpper('ABCD.'), false, "Passed!");
+});
+test("Passing NaN must return false ", function () {
+	equal(p.isUpper(parseInt("test")), false, "Passed!");
+});
+test("Passing Infinity must return false ", function () {
+	equal(p.isUpper(Infinity), false, "Passed!");
 });
 
 module("isLower tests")
@@ -87,6 +99,13 @@ test("Check whether p has method isLower ", function () {
 
 test("Check whether p has method isUpper ", function () {
 	equal(p.isLower('abcd! '), false, "Passed!");
+});
+
+test("Passing NaN must return false ", function () {
+	equal(p.isLower(parseInt("test")), false, "Passed!");
+});
+test("Passing Infinity must return false ", function () {
+	equal(p.isLower(Infinity), false, "Passed!");
 });
 
 module("reverse tests")
