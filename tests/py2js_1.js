@@ -72,6 +72,7 @@ var p = {
 		r = [];
 		a = s.trim().split(" ");
 		l = a.length;
+        
 		for (i = 0; i < l; i++) {
 			r.push(a[i].toString().replace(a[i][0], a[i][0].toUpperCase()));
 

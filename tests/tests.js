@@ -181,3 +181,27 @@ test("Passing NaN must return false", function () {
 test("Passing NaN must return false", function () {
 	equal(p.isString(true), false, "Passed!");
 });
+
+module('title tests')
+
+test("Basic test for title", function () {
+	equal(p.title("i love py2js"), "I Love Py2js", "Passed!");
+});
+test("Basic test for title", function () {
+	equal(p.title("I love Py2js"), "I Love Py2js", "Passed!");
+});
+test("Basic test for title", function () {
+	equal(p.title("i"), "I", "Passed!");
+});
+test("Basic test for title", function () {
+	equal(p.title("i   l"), "I L", "Passed!");
+});
+test("Basic test for title", function () {
+	equal(p.title("il"), "Il", "Passed!");
+});
+test("Basic test for title", function () {
+	equal(p.title(" il "), "Il", "Passed!");
+});
+test("Basic test for title", function () {
+	equal(p.title(" "), " ", "Passed!");
+});
