@@ -205,3 +205,80 @@ test("Basic test for title", function () {
 test("Basic test for title", function () {
 	equal(p.title(" "), " ", "Passed!");
 });
+
+module('capitalize tests')
+
+test("Basic test for capitalize", function () {
+	equal(p.capitalize("i love py2js"), "I love py2js", "Passed!");
+});
+
+test("Basic test for capitalize", function () {
+	equal(p.capitalize(" "), "", "Passed!");
+});
+
+test("Basic test for capitalize", function () {
+	equal(p.capitalize(""), "", "Passed!");
+});
+
+test("Basic test for capitalize", function () {
+	equal(p.capitalize("I love py2js"), "I love py2js", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.capitalize(null), "", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.capitalize(undefined), "", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.capitalize(" i love py2js"), " i love py2js", "Passed!");
+});
+
+test("Basic test for capitalize", function () {
+	equal(p.capitalize(" i love py2js "), " i love py2js ", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.capitalize("!@#i love py2js."), "!@#i love py2js.", "Passed!");
+});
+
+module('swapCase tests')
+
+test("Basic test for capitalize", function () {
+	equal(p.swapCase("iL"), "Il", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.swapCase("i LoVe pY2Js"), "I lOvE Py2jS", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.swapCase(" i LoVe pY2Js"), " I lOvE Py2jS", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.swapCase("@i LoVe pY2Js"), "@I lOvE Py2jS", "Passed!");
+});
+test("Basic test for capitalize", function () {
+	equal(p.swapCase(" i LoVe pY2Js "), " I lOvE Py2jS ", "Passed!");
+});
+
+test("Basic test for capitalize", function () {
+	equal(p.swapCase(" "), " ", "Passed!");
+});
+
+test("Basic test for capitalize", function () {
+	equal(p.swapCase(""), "", "Passed!");
+});
+
+module("isEmpty tests")
+
+test("Basic test for isEmpty", function () {
+	equal(p.isEmpty(""), true, "Passed!");
+});
+
+test("Basic test for isEmpty", function () {
+	equal(p.isEmpty("\n"), true, "Passed!");
+});
+
+test("Basic test for isEmpty", function () {
+	equal(p.isEmpty("\t"), true, "Passed!");
+});
+test("Basic test for isEmpty", function () {
+	equal(p.isEmpty(" "), true, "Passed!");
+});

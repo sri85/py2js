@@ -49,18 +49,14 @@ var p = {
 	},
 
 	reverse : function (s) {
-		if (typeof(s)==="string") {
+		if (typeof(s) === "string") {
 			return s.split('').reverse().join('');
 
-		}
-        
-        else {
-        
-            return '';
-        
-        }
+		} else {
 
-		
+			return '';
+
+		}
 
 	},
 
@@ -72,7 +68,7 @@ var p = {
 		r = [];
 		a = s.trim().split(" ");
 		l = a.length;
-        
+
 		for (i = 0; i < l; i++) {
 			r.push(a[i].toString().replace(a[i][0], a[i][0].toUpperCase()));
 
@@ -84,7 +80,13 @@ var p = {
 
 	capitalize : function (s) {
 
-		return s.toLowerCase().replace(s[0].toLowerCase(), s[0].toUpperCase());
+		if (s === '' || s == " ") {
+			return "";
+		} else if (typeof(s) === "string") {
+			return s.toLowerCase().replace(s[0].toLowerCase(), s[0].toUpperCase());
+		} else {
+            return "";
+        }
 
 	},
 
@@ -106,7 +108,7 @@ var p = {
 
 	isLower : function (s) {
 		if (typeof(s) === "string") {
-			if ((/(?=.*[A-Z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]\s])/g).test(s) ||s=='') {
+			if ((/(?=.*[A-Z\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]\s])/g).test(s) || s == '') {
 				return false;
 
 			} else {
@@ -114,12 +116,10 @@ var p = {
 				return true;
 			}
 
+		} else {
+
+			return false;
 		}
-        
-        else {
-        
-            return false;
-        }
 
 	},
 
@@ -131,7 +131,7 @@ var p = {
 		a = s.split('');
 		l = s.length;
 		for (i = 0; i < l; i++) {
-			if (a[i].isUpper()) {
+			if (p.isLower(a[i])) {
 				c = c + a[i].toUpperCase();
 
 			} else {
