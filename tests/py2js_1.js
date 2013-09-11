@@ -219,7 +219,7 @@ var p = {
 		a = s.split(" ");
 		l = a.length;
 		for (i = 0; i < l; i++) {
-			if (!a[i][0].isUpper()) {
+			if (!(p.isUpper(a[i][0]))) {
 				return false
 
 			}
