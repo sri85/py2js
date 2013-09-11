@@ -352,3 +352,44 @@ test("Basic test for isDigit", function () {
 test("Basic test for isDigit", function () {
 	equal(p.isDigit(undefined), false, "Passed!");
 });
+
+module("count tests")
+test("Basic test for count", function () {
+	equal(p.count("ababab", "a"), 3, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.count("ab ab ab", "ab"), 3, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.count("ab ab ab", "c"), 0, "Passed!");
+});
+test("Basic test for count", function () {
+	equal(p.count("ab ab ab", " "), 2, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.count("ab ab ab abc", "a"), 4, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.count("ab ab ab abc", "abc"), 1, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.count("abc", "a"), 1, "Passed!");
+});
+
+module("isTitle tests")
+test("Basic test for count", function () {
+	equal(p.isTitle("B A C"), true, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.isTitle("B a C"), false, "Passed!");
+});
+
+test("Basic test for count", function () {
+	equal(p.isTitle(" B a C"), false, "Passed!");
+});
