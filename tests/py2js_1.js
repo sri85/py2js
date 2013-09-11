@@ -85,8 +85,8 @@ var p = {
 		} else if (typeof(s) === "string") {
 			return s.toLowerCase().replace(s[0].toLowerCase(), s[0].toUpperCase());
 		} else {
-            return "";
-        }
+			return "";
+		}
 
 	},
 
@@ -171,168 +171,192 @@ var p = {
 	},
 
 	isEmpty : function (s) {
-		if ((/[\s\t\n]/g).test(s) || (s.length) == 0) {
-			return true;
+		if (typeof(s) === 'string') {
+			if ((/[\s\t\n]/g).test(s) || (s.length) == 0) {
+				return true;
+
+			} else {
+				return false;
+
+			}
+
+		} else {
+			return false;
 
 		}
-		return false;
 
 	},
 
 	isAlpha : function (s) {
 
-		return !(/[^a-zA-Z]/g.test(s));
+		if (s == '') {
+			return false;
+		} else if (typeof(s) === 'string') {
+
+			return !(/[^a-zA-Z]/g.test(s));
+
+		} else {
+			return false;
+		}
 
 	},
 
 	isDigit : function (s) {
-		return !(/[^0-9]/g.test(s));
+		if (s == '') {
+			return false;
+		} else if (typeof(s) === 'number') {
+			return !(/[^0-9]/g.test(s));
 
-	},
+	}
+	else {
+		return false;
+	}
 
-	isTitle : function (s) {
-		var i,
-		l;
-		a = s.split(" ");
-		l = a.length;
-		for (i = 0; i < l; i++) {
-			if (!a[i][0].isUpper()) {
-				return false
+},
 
-			}
+isTitle : function (s) {
+	var i,
+	l;
+	a = s.split(" ");
+	l = a.length;
+	for (i = 0; i < l; i++) {
+		if (!a[i][0].isUpper()) {
+			return false
 
 		}
+
+	}
+	return true
+
+},
+
+stripc : function (str) {
+	var s = [],
+	a = '',
+	l,
+	i;
+	s = str.split('');
+	l = s.length;
+	for (i = 0; i < l; i++) {
+		if (/[a-zA-Z0-9]/g.test(s[i])) {
+			a = a + s[i];
+
+		}
+
+	}
+
+	return a;
+
+},
+
+multiply : function (s, n) {
+	var i,
+	r = '';
+	for (i = 0; i < n; i++) {
+		r = r + s
+
+	}
+	return r;
+
+},
+
+prefix : function (s1, s2) {
+
+	return (s1 + s2);
+},
+
+suffix : function (s1, s2) {
+
+	return (s2 + s1);
+
+},
+
+lTrim : function (s) {
+
+	return s.replace(/^\s+/, "");
+},
+
+rTrim : function (s) {
+
+	return s.replace(/\s+$/, "");
+
+},
+
+stripPunc : function (s) {
+
+	return (s.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]]/g, "").replace(/\s{2,}/g, " "));
+
+},
+
+toBool : function (s) {
+	var a;
+	a = s.toLowerCase();
+	if (a == true || a == 'true' || a == 'on' || a == '1' || a == 'yes') {
+
 		return true
 
-	},
+	} else if (a == false || a == 'false' || a == 'off' || a == '0' || a == 'no') {
 
-	stripc : function (str) {
-		var s = [],
-		a = '',
-		l,
-		i;
-		s = str.split('');
-		l = s.length;
-		for (i = 0; i < l; i++) {
-			if (/[a-zA-Z0-9]/g.test(s[i])) {
-				a = a + s[i];
+		return false;
+	} else {
 
-			}
+		return false;
+	}
 
-		}
+},
 
-		return a;
+beginsWith : function (s) {
+	var i,
+	a = [];
+	a = this.split(' ');
+	if (a[0] === s) {
+		return true;
 
-	},
-
-	multiply : function (s, n) {
-		var i,
-		r = '';
-		for (i = 0; i < n; i++) {
-			r = r + s
-
-		}
-		return r;
-
-	},
-
-	prefix : function (s1, s2) {
-
-		return (s1 + s2);
-	},
-
-	suffix : function (s1, s2) {
-
-		return (s2 + s1);
-
-	},
-
-	lTrim : function (s) {
-
-		return s.replace(/^\s+/, "");
-	},
-
-	rTrim : function (s) {
-
-		return s.replace(/\s+$/, "");
-
-	},
-
-	stripPunc : function (s) {
-
-		return (s.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]]/g, "").replace(/\s{2,}/g, " "));
-
-	},
-
-	toBool : function (s) {
-		var a;
-		a = s.toLowerCase();
-		if (a == true || a == 'true' || a == 'on' || a == '1' || a == 'yes') {
-
-			return true
-
-		} else if (a == false || a == 'false' || a == 'off' || a == '0' || a == 'no') {
-
-			return false;
-		} else {
-
-			return false;
-		}
-
-	},
-
-	beginsWith : function (s) {
-		var i,
-		a = [];
-		a = this.split(' ');
-		if (a[0] === s) {
-			return true;
-
-		} else {
-			return false;
-
-		}
-
-	},
-
-	right : function (s) {
-
-		return (s.slice((s.length, s.length) - (Math.abs(n))))
-
-	},
-
-	equals : function (s1, s2) {
-		var i = 0,
-		a,
-		l;
-		a = s1.split('');
-		l = s1.length;
-		if (l != s2.length) {
-			return false;
-
-		} else {
-			while (i < l) {
-				if (s1[i] != s2[i]) {
-					return false;
-
-				}
-				i++
-			}
-			return true;
-		}
-
-	},
-
-	isString : function (s) {
-
-		if (typeof(s) === "string") {
-
-			return true;
-
-		}
-
+	} else {
 		return false;
 
 	}
+
+},
+
+right : function (s) {
+
+	return (s.slice((s.length, s.length) - (Math.abs(n))))
+
+},
+
+equals : function (s1, s2) {
+	var i = 0,
+	a,
+	l;
+	a = s1.split('');
+	l = s1.length;
+	if (l != s2.length) {
+		return false;
+
+	} else {
+		while (i < l) {
+			if (s1[i] != s2[i]) {
+				return false;
+
+			}
+			i++
+		}
+		return true;
+	}
+
+},
+
+isString : function (s) {
+
+	if (typeof(s) === "string") {
+
+		return true;
+
+	}
+
+	return false;
+
+}
 
 }
