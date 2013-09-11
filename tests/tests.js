@@ -2,7 +2,7 @@
 This file has the set of unit tests for the py2js library.
 
 
-*/
+ */
 
 module("isUpper tests")
 test("Passing an alphabet in lower case must return false", function () {
@@ -155,7 +155,6 @@ test("Passing an  empty string must return true", function () {
 	equal(p.isString(''), true, "Passed!");
 });
 
-
 test("Passing null must return false", function () {
 	equal(p.isString(' '), true, "Passed!");
 });
@@ -281,4 +280,75 @@ test("Basic test for isEmpty", function () {
 });
 test("Basic test for isEmpty", function () {
 	equal(p.isEmpty(" "), true, "Passed!");
+});
+test("Basic test for isEmpty", function () {
+	equal(p.isEmpty(null), false, "Passed!");
+});
+
+test("Basic test for isEmpty", function () {
+	equal(p.isEmpty(undefined), false, "Passed!");
+});
+
+module("isAlpha tests")
+
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha("a"), true, "Passed!");
+});
+
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha("A"), true, "Passed!");
+});
+
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha(" "), false, "Passed!");
+});
+
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha(1), false, "Passed!");
+});
+test("Passing empty string must return false", function () {
+	equal(p.isAlpha(""), false, "Passed!");
+});
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha("\t"), false, "Passed!");
+});
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha("\n"), false, "Passed!");
+});
+
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha(null), false, "Passed!");
+});
+
+test("Basic test for isAlpha", function () {
+	equal(p.isAlpha(undefined), false, "Passed!");
+});
+module("isDigit tests")
+
+test("Basic test for isDigit", function () {
+	equal(p.isDigit(1), true, "Passed!");
+});
+
+test("Basic test for isDigit", function () {
+	equal(p.isDigit(1.0), true, "Passed!");
+});
+
+test("Basic test for isDigit", function () {
+	equal(p.isDigit("1.0"), false, "Passed!");
+});
+test("Basic test for isDigit", function () {
+	equal(p.isDigit("a"), false, "Passed!");
+});
+
+test("Basic test for isDigit", function () {
+	equal(p.isDigit(""), false, "Passed!");
+});
+test("Basic test for isDigit", function () {
+	equal(p.isDigit(" "), false, "Passed!");
+});
+test("Basic test for isDigit", function () {
+	equal(p.isDigit(null), false, "Passed!");
+});
+test("Basic test for isDigit", function () {
+	equal(p.isDigit(undefined), false, "Passed!");
 });
