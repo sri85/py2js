@@ -375,6 +375,20 @@ var p = {
 
 		return n.join(" ");
 
+	},
+
+	replaceAll : function (s, s1, s2) {
+		var r;
+		var r = new RegExp(s1, 'g');
+		if (r.test(s)) {
+			return s.replace(r, s2);
+
+		} else {
+			return s;
+		}
+        if(s2==='.') {
+            return s.replace(/\./g,s2);
+        }
 	}
 
 }
