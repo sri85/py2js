@@ -356,6 +356,25 @@ var p = {
 
 		return false;
 
+	},
+
+	stripExtra : function (s) {
+
+		var split_str = s.split(" ");
+		var i,
+		a = [],
+		n = [];
+		var l = split_str.length;
+		for (i = 0; i < l; i++) {
+			if (split_str[i] != "") {
+				n.push(split_str[i])
+
+			}
+
+		}
+
+		return n.join(" ");
+
 	}
 
 }
