@@ -389,6 +389,11 @@ var p = {
         if(s2==='.') {
             return s.replace(/\./g,s2);
         }
+        
+        if(s2==='/') {
+            return s.replace(/\//g,s2)
+        
+        }
 	}
 
 }

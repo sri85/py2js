@@ -393,3 +393,23 @@ test("Basic test for count", function () {
 test("Basic test for count", function () {
 	equal(p.isTitle(" B a C"), false, "Passed!");
 });
+
+module("prefix tests")
+test("Sanity test for prefix", function () {
+	equal(p.prefix("Mr.", "Flash"), "Mr.Flash", "Passed!");
+});
+test("Prefix attribute is empty string ", function () {
+	equal(p.prefix("", "Flash"), "Flash", "Passed!");
+});
+test("Prefix attribute is an empty white space ", function () {
+	equal(p.prefix(" ", "Flash"), " Flash", "Passed!");
+});
+test("Prefix attribute has special characters", function () {
+	equal(p.prefix("!.?", "Flash"), "!.?Flash", "Passed!");
+});
+test("Prefix attribute and the string is empty", function () {
+	equal(p.prefix("", ""), "", "Passed!");
+});
+test("Prefix attribute and the string is empty", function () {
+	equal(p.prefix("", " "), " ", "Passed!");
+});
