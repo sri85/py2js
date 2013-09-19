@@ -413,3 +413,23 @@ test("Prefix attribute and the string is empty", function () {
 test("Prefix attribute and the string is empty", function () {
 	equal(p.prefix("", " "), " ", "Passed!");
 });
+
+module("suffix tests")
+test("Sanity test for prefix", function () {
+	equal(p.suffix("Flash", " is fast"), "Flash is fast", "Passed!");
+});
+test("Prefix attribute is empty string ", function () {
+	equal(p.suffix("Flash", ""), "Flash", "Passed!");
+});
+test("Prefix attribute is an empty white space ", function () {
+	equal(p.suffix("Flash", " "), " Flash ", "Passed!");
+});
+test("Prefix attribute has special characters", function () {
+	equal(p.suffix("Flash","!.?" ), "Flash!.?", "Passed!");
+});
+test("Prefix attribute and the string is empty", function () {
+	equal(p.suffix("", ""), "", "Passed!");
+});
+test("Prefix attribute and the string is empty", function () {
+	equal(p.suffix("", " "), " ", "Passed!");
+});
