@@ -416,20 +416,65 @@ test("Prefix attribute and the string is empty", function () {
 
 module("suffix tests")
 test("Sanity test for prefix", function () {
-	equal(p.suffix("Flash", " is fast"), "Flash is fast", "Passed!");
+	equal(p.suffix(" is fast", "Flash"), "Flash is fast", "Passed!");
 });
 test("Prefix attribute is empty string ", function () {
 	equal(p.suffix("Flash", ""), "Flash", "Passed!");
 });
 test("Prefix attribute is an empty white space ", function () {
-	equal(p.suffix("Flash", " "), " Flash ", "Passed!");
+	equal(p.suffix(" ", " Flash"), " Flash ", "Passed!");
 });
 test("Prefix attribute has special characters", function () {
-	equal(p.suffix("Flash","!.?" ), "Flash!.?", "Passed!");
+	equal(p.suffix("!.?", "Flash"), "Flash!.?", "Passed!");
 });
 test("Prefix attribute and the string is empty", function () {
 	equal(p.suffix("", ""), "", "Passed!");
 });
 test("Prefix attribute and the string is empty", function () {
 	equal(p.suffix("", " "), " ", "Passed!");
+});
+
+module("ltrim tests")
+test("Sanity test for ltrim", function () {
+	equal(p.lTrim(" Flash"), "Flash", "Passed!");
+});
+test("Check ltrim trims more than onr whitespace", function () {
+	equal(p.lTrim("  Flash"), "Flash", "Passed!");
+});
+test("Check ltrim does not strip the whitespace on the right", function () {
+	equal(p.lTrim("  Flash "), "Flash ", "Passed!");
+});
+
+test("Check ltrim strips only the whitespace at the beginning of a sentence", function () {
+	equal(p.lTrim("  Flash is fast"), "Flash is fast", "Passed!");
+});
+
+test("Check ltrim strips when whitespace is passed as a parameter ", function () {
+	equal(p.lTrim(" "), "", "Passed!");
+});
+
+module("rtrim tests")
+
+test("Sanity test for rtrim", function () {
+	equal(p.rTrim("Flash "), "Flash", "Passed!");
+});
+test("Check rtrim trims more than one whitespace", function () {
+	equal(p.rTrim("Flash  "), "Flash", "Passed!");
+});
+test("Check rtrim does not strip the whitespace on the right", function () {
+	equal(p.rTrim("  Flash "), "  Flash", "Passed!");
+});
+
+test("Check rtrim strips only the whitespace at the beginning of a sentence", function () {
+	equal(p.rTrim("Flash is fast  "), "Flash is fast", "Passed!");
+});
+
+test("Check rtrim strips when whitespace is passed as a parameter", function () {
+	equal(p.rTrim(" "), "", "Passed!");
+});
+
+module("stripPunc tests")
+
+test("Check striPunc strips the punctuation", function () {
+	equal(p.rTrim(" "), "", "Passed!");
 });
