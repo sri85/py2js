@@ -476,5 +476,35 @@ test("Check rtrim strips when whitespace is passed as a parameter", function () 
 module("stripPunc tests")
 
 test("Check striPunc strips the punctuation", function () {
-	equal(p.rTrim(" "), "", "Passed!");
+	equal(p.stripPunc("~!@#$%^&*()}{"), "", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("~ @"), " ", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("F!@#lash?><;"), "Flash", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("F!@#lash?><; !is@ f@ast"), "Flash is fast", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("F!@#lash?    "), "Flash  ", "Passed!");
+});
+
+module("stripc tests")
+
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("~!@#$%^&*()}{"), "", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("~Flash"), "Flash", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("F!@#lash?><;"), "Flash", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("F!@#lash?><;"), "Flash", "Passed!");
+});
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("F!@#lash?"), "Flash", "Passed!");
 });
