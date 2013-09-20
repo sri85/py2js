@@ -283,7 +283,7 @@ var p = {
 
 	stripPunc : function (s) {
 
-		return (s.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()\[\]]/g, "").replace(/\s{2,}/g, " "));
+		return (s.replace(/[\.,-\/#!$%@\^&\*\?<>;:{}=\-_`~()\[\]]/g, "").replace(/\s{2,}/g, " "));
 
 	},
 
