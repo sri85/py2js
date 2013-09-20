@@ -538,3 +538,57 @@ test("Sanity test for multiply", function () {
 test("Sanity test for multiply", function () {
 	equal(p.multiply("z", 03), "zzz", "Passed!");
 });
+test("Sanity test for multiply", function () {
+	equal(p.multiply("", -1), "", "Passed!");
+});
+
+module("isAlphaNum tests")
+
+test("Sanity test for isalphanum", function () {
+	equal(p.isAlphaNum("!123"), false, "Passed!");
+});
+
+test("Sanity test for isalphanum", function () {
+	equal(p.isAlphaNum("1 23"), false, "Passed!");
+});
+test("Sanity test for isalphanum", function () {
+	equal(p.isAlphaNum(" "), false, "Passed!");
+});
+test("Sanity test for isalphanum", function () {
+	equal(p.isAlphaNum("flash"), true, "Passed!");
+});
+test("Sanity test for isalphanum", function () {
+	equal(p.isAlphaNum("123"), true, "Passed!");
+});
+test("Sanity test for isalphanum", function () {
+	equal(p.isAlphaNum("FLASH"), true, "Passed!");
+});
+module("contains tests")
+
+test("Sanity test for contains", function () {
+	equal(p.contains("flash", "f"), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("flash", "F"), false, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("fla sh", " "), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("fla.sh", "."), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("fla/sh", "/"), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("123", "3"), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("flash", "flash"), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("flash is FLASH", "flash"), true, "Passed!");
+});
+test("Sanity test for contains", function () {
+	equal(p.contains("", ""), true, "Passed!");
+});
