@@ -592,3 +592,11 @@ test("Sanity test for contains", function () {
 test("Sanity test for contains", function () {
 	equal(p.contains("", ""), true, "Passed!");
 });
+module("beginsWith tests")
+
+test("Sanity test for beginsWith", function () {
+	equal(p.beginsWith("flash", "f"), true, "Passed!");
+});
+test("Sanity test for beginsWith", function () {
+	equal(p.beginsWith("flash is fast", "flash"), true, "Passed!");
+});
