@@ -249,6 +249,9 @@ var p = {
 	},
 
 	multiply : function (s, n) {
+		if (n <= 0) {
+			return s;
+		}
 		var i,
 		r = '';
 		for (i = 0; i < n; i++) {
@@ -386,14 +389,14 @@ var p = {
 		} else {
 			return s;
 		}
-        if(s2==='.') {
-            return s.replace(/\./g,s2);
-        }
-        
-        if(s2==='/') {
-            return s.replace(/\//g,s2)
-        
-        }
+		if (s2 === '.') {
+			return s.replace(/\./g, s2);
+		}
+
+		if (s2 === '/') {
+			return s.replace(/\//g, s2)
+
+		}
 	}
 
 }
