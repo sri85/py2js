@@ -148,7 +148,7 @@ var p = {
 			return false;
 
 		} else {
-			if ((/\w\d/g).test(s)) {
+			if ((/[\w\d]/g).test(s)) {
 				return true;
 			} else {
 				return false;
@@ -160,7 +160,7 @@ var p = {
 
 	contains : function (s, c) {
 		var re;
-		re = new Regex(c, g);
+		re = new RegExp(c, 'g');
 		if (re.test(s)) {
 			return true;
 		} else {
