@@ -490,21 +490,51 @@ test("Check striPunc strips the punctuation", function () {
 test("Check striPunc strips the punctuation", function () {
 	equal(p.stripPunc("F!@#lash?    "), "Flash  ", "Passed!");
 });
+test("Check striPunc strips the punctuation", function () {
+	equal(p.stripPunc("Flash"), "Flash", "Passed!");
+});
 
 module("stripc tests")
 
-test("Check striPunc strips the punctuation", function () {
-	equal(p.stripPunc("~!@#$%^&*()}{"), "", "Passed!");
+test("Check stripc strips the punctuation", function () {
+	equal(p.stripc("~!@#$%^&*()}{"), "", "Passed!");
+});
+test("Check stripc strips the punctuation", function () {
+	equal(p.stripc("~Flash"), "Flash", "Passed!");
 });
 test("Check striPunc strips the punctuation", function () {
-	equal(p.stripPunc("~Flash"), "Flash", "Passed!");
+	equal(p.stripc("F!@#lash?><;"), "Flash", "Passed!");
 });
 test("Check striPunc strips the punctuation", function () {
-	equal(p.stripPunc("F!@#lash?><;"), "Flash", "Passed!");
+	equal(p.stripc("F!@#lash?><;"), "Flash", "Passed!");
 });
 test("Check striPunc strips the punctuation", function () {
-	equal(p.stripPunc("F!@#lash?><;"), "Flash", "Passed!");
+	equal(p.stripc("F!@#lash?"), "Flash", "Passed!");
 });
 test("Check striPunc strips the punctuation", function () {
-	equal(p.stripPunc("F!@#lash?"), "Flash", "Passed!");
+	equal(p.stripc("F!@#lash?"), "Flash", "Passed!");
+});
+
+module("multiply tests")
+
+test("Sanity test for multiply", function () {
+	equal(p.multiply("!", 3), "!!!", "Passed!");
+});
+test("Sanity test for multiply", function () {
+	equal(p.multiply("a", 5), "aaaaa", "Passed!");
+});
+test("Sanity test for multiply", function () {
+	equal(p.multiply(" ", 2), "  ", "Passed!");
+});
+test("Sanity test for multiply", function () {
+	equal(p.multiply("f", 0), "f", "Passed!");
+});
+test("Sanity test for multiply", function () {
+	equal(p.multiply("", 5), "", "Passed!");
+});
+test("Sanity test for multiply", function () {
+	equal(p.multiply("z", -1), "z", "Passed!");
+});
+test("Sanity test for multiply", function () {
+	equal(p.multiply("z", 03), "zzz", "Passed!");
 });
