@@ -290,23 +290,6 @@ var p = {
 
 	},
 
-	toBool : function (s) {
-		var a;
-		a = s.toLowerCase();
-		if (a == true || a == 'true' || a == 'on' || a == '1' || a == 'yes') {
-
-			return true
-
-		} else if (a == false || a == 'false' || a == 'off' || a == '0' || a == 'no') {
-
-			return false;
-		} else {
-
-			return false;
-		}
-
-	},
-
 	beginsWith : function (s) {
 		var i,
 		a = [];
@@ -321,9 +304,13 @@ var p = {
 
 	},
 
-	right : function (s) {
+	right : function (s, n) {
 
-		return (s.slice((s.length, s.length) - (Math.abs(n))))
+		if (n <= s.length) {
+			return (s.slice((s.length, s.length) - (Math.abs(n))));
+		} else {
+			return s;
+		}
 
 	},
 

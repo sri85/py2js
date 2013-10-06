@@ -600,3 +600,57 @@ test("Sanity test for beginsWith", function () {
 test("Sanity test for beginsWith", function () {
 	equal(p.beginsWith("flash is fast", "flash"), true, "Passed!");
 });
+
+module("right tests")
+
+test("Sanity test for right", function () {
+	equal(p.right("py2js", 2), "js", "Passed!");
+});
+test("Sanity test for right", function () {
+	equal(p.right("py2js", 1), "s", "Passed!");
+});
+test("Sanity test for right", function () {
+	equal(p.right("py2js", 0), "", "Passed!");
+});
+test("Sanity test for right", function () {
+	equal(p.right("", 0), "", "Passed!");
+});
+test("Sanity test for right", function () {
+	equal(p.right("py2js", -1), "s", "Passed!");
+});
+test("Sanity test for right", function () {
+	equal(p.right("py2js", 9), "py2js", "Passed!");
+});
+
+test("Sanity test for right", function () {
+	equal(p.right("py2js", 2.1), "2js", "Passed!");
+});
+
+test("Sanity test for right", function () {
+	equal(p.right("py2js", 5), "py2js", "Passed!");
+});
+
+test("Sanity test for right", function () {
+	equal(p.right("py2js ", 1), " ", "Passed!");
+});
+
+module("equals tests")
+
+test("Sanity test for equals", function () {
+	equal(p.equals("py2js", "py2js"), true, "Passed!");
+});
+
+test("Sanity test for equals", function () {
+	equal(p.equals("py2js", "Py2js"), false, "Passed!");
+});
+test("Sanity test for equals", function () {
+	equal(p.equals("py2js", "py2js "), false, "Passed!");
+});
+
+test("Sanity test for equals", function () {
+	equal(p.equals("py2js ", ""), false, "Passed!");
+});
+
+test("Sanity test for equals", function () {
+	equal(p.equals("", ""), true, "Passed!");
+});
