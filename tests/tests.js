@@ -654,3 +654,24 @@ test("Sanity test for equals", function () {
 test("Sanity test for equals", function () {
 	equal(p.equals("", ""), true, "Passed!");
 });
+test("Sanity test for equals", function () {
+	equal(p.equals("p", "P"), false, "Passed!");
+});
+test("Sanity test for equals", function () {
+	equal(p.equals("1", "1"), true, "Passed!");
+});
+
+module("stripExtra tests")
+
+test("Sanity test for equals", function () {
+	equal(p.stripExtra("py2js is  awesome"), "py2js is awesome", "Passed!");
+});
+test("Sanity test for equals", function () {
+	equal(p.stripExtra("  py2js is awesome"), "py2js is awesome", "Passed!");
+});
+test("Sanity test for equals", function () {
+	equal(p.stripExtra("py2js is awesome  "), "py2js is awesome ", "Passed!");
+});
+test("Sanity test for equals", function () {
+	equal(p.stripExtra("py2js is awes  ome"), "py2js is awesome ", "Passed!");
+});
