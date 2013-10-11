@@ -663,15 +663,48 @@ test("Sanity test for equals", function () {
 
 module("stripExtra tests")
 
-test("Sanity test for equals", function () {
+test("Sanity test for stripExtra", function () {
 	equal(p.stripExtra("py2js is  awesome"), "py2js is awesome", "Passed!");
 });
-test("Sanity test for equals", function () {
+test("Sanity test for stripExtra", function () {
 	equal(p.stripExtra("  py2js is awesome"), "py2js is awesome", "Passed!");
 });
-test("Sanity test for equals", function () {
+test("Sanity test for stripExtra", function () {
 	equal(p.stripExtra("py2js is awesome  "), "py2js is awesome ", "Passed!");
 });
-test("Sanity test for equals", function () {
-	equal(p.stripExtra("py2js is awes  ome"), "py2js is awesome ", "Passed!");
+test("Sanity test for stripExtra", function () {
+	equal(p.stripExtra("py2js is awes  ome"), "py2js is awes ome", "Passed!");
 });
+test("Sanity test for stripExtra", function () {
+	equal(p.stripExtra("  "), "", "Passed!");
+});
+test("Sanity test for stripExtra", function () {
+	equal(p.stripExtra("I   love py2js"), "I love py2js", "Passed!");
+});
+
+module("replaceAll tests")
+
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("my2js", "m", "p"), "py2js", "Passed!");
+});
+
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("my2js my2js my2js", "m", "p"), "py2js py2js py2js", "Passed!");
+});
+
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js py2js py2js", " ", "/"), "py2js/py2js/py2js", "Passed!");
+});
+
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js....", ".", "/"), "py2js////", "Passed!");
+});
+
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js", "py2js", ""), "", "Passed!");
+});
+
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js", "py2js", "Q"), "py2js", "Passed!");
+});
+
