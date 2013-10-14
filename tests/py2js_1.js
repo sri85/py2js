@@ -369,6 +369,14 @@ var p = {
 
 	replaceAll : function (s, s1, s2) {
 		var r;
+        if (s1 === '.') {
+			return s.replace(/\./g, s2);
+		}
+
+		if (s1 === '/') {
+			return s.replace(/\//g, s2)
+
+		}
 		var r = new RegExp(s1, 'g');
 		if (r.test(s)) {
 			return s.replace(r, s2);
@@ -376,14 +384,8 @@ var p = {
 		} else {
 			return s;
 		}
-		if (s2 === '.') {
-			return s.replace(/\./g, s2);
-		}
-
-		if (s2 === '/') {
-			return s.replace(/\//g, s2)
-
-		}
+		
+        
 	}
 
 }
