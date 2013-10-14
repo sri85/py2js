@@ -415,22 +415,22 @@ test("Prefix attribute and the string is empty", function () {
 });
 
 module("suffix tests")
-test("Sanity test for prefix", function () {
+test("Sanity test for suffix", function () {
 	equal(p.suffix(" is fast", "Flash"), "Flash is fast", "Passed!");
 });
-test("Prefix attribute is empty string ", function () {
+test("Suffix attribute is empty string ", function () {
 	equal(p.suffix("Flash", ""), "Flash", "Passed!");
 });
-test("Prefix attribute is an empty white space ", function () {
+test("Suffix attribute is an empty white space ", function () {
 	equal(p.suffix(" ", " Flash"), " Flash ", "Passed!");
 });
-test("Prefix attribute has special characters", function () {
+test("Suffix attribute has special characters", function () {
 	equal(p.suffix("!.?", "Flash"), "Flash!.?", "Passed!");
 });
-test("Prefix attribute and the string is empty", function () {
+test("Suffix attribute and the string is empty", function () {
 	equal(p.suffix("", ""), "", "Passed!");
 });
-test("Prefix attribute and the string is empty", function () {
+test("Suffix attribute and the string is empty", function () {
 	equal(p.suffix("", " "), " ", "Passed!");
 });
 
@@ -560,8 +560,9 @@ test("Sanity test for isalphanum", function () {
 test("Sanity test for isalphanum", function () {
 	equal(p.isAlphaNum("123"), true, "Passed!");
 });
+
 test("Sanity test for isalphanum", function () {
-	equal(p.isAlphaNum("FLASH"), true, "Passed!");
+	equal(p.isAlphaNum("@##"), false, "Passed!");
 });
 module("contains tests")
 
@@ -697,7 +698,7 @@ test("Sanity test for replaceAll", function () {
 });
 
 test("Sanity test for replaceAll", function () {
-	equal(p.replaceAll("py2js....", ".", "/"), "py2js////", "Passed!");
+	equal(p.replaceAll("py2jspp", "p", "."), ".y2js..", "Passed!");
 });
 
 test("Sanity test for replaceAll", function () {
@@ -705,6 +706,17 @@ test("Sanity test for replaceAll", function () {
 });
 
 test("Sanity test for replaceAll", function () {
-	equal(p.replaceAll("py2js", "py2js", "Q"), "py2js", "Passed!");
+	equal(p.replaceAll("py2js..", ".", "/"), "py2js//", "Passed!");
 });
-
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js is wonderful", " ", "/"), "py2js/is/wonderful", "Passed!");
+});
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js is wonderful", " ", "/"), "py2js/is/wonderful", "Passed!");
+});
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js is wonderful", " ", "/"), "py2js/is/wonderful", "Passed!");
+});
+test("Sanity test for replaceAll", function () {
+	equal(p.replaceAll("py2js is wonderful", "a", "/"), "py2js is wonderful", "Passed!");
+});
